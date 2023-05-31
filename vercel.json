@@ -4,8 +4,8 @@
         "src": "index.js",
         "use": "@now/node"
     }],
-    "routes": [{
-        "src": "/(.*)",
+    "router": [{
+        "src":"/(.*)",
         "dest": "index.js"
     }]
 }
