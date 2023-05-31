@@ -1,0 +1,82 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          no
+        </th>
+        <th scope="col" class="px-6 py-3">
+          BUYER name
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            ORDER
+
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            QUNTTY
+
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center">
+            COLOR
+
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center ">
+            EDITE
+
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3">
+          <div class="flex items-center ">
+            REMOVE
+
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% var i=1 %>
+        <% data.forEach((itam)=>{%>
+
+
+
+          <tr class="bg-white dark:bg-gray-800 border-indigo-500">
+            <td class="px-6 py-4 font-medium">
+              <%= i++ %>
+            </td>
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= itam.name %>
+            </th>
+            <td class="px-6 py-4 text-black-500 font-medium ">
+              <%= itam.order %>
+
+            </td>
+            <td class="px-6 py-4 font-medium ">
+              <%= itam.quntty %>
+
+            </td>
+            <td class="px-6 py-4 font-medium ">
+              <%= itam.color %>
+
+            <td class="px-6 py-4 font-medium  ">
+              <form action="/des/edite/<%= itam._id %> " method="POST">
+                <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 ">Edit</button>
+              </form>
+            </td>
+            <td class="px-6 py-4 font-medium  ">
+              <form action="/des/delete/<%= itam._id %> " method="POST">
+                <button type="submit" class="font-medium text-blue-900 dark:text-blue-500 ">Delet</button>
+              </form>
+            </td>
+          </tr>
+          <% }) %>
+    </tbody>
+  </table>
+</div>
+<script src="https://cdn.tailwindcss.com"></script>
